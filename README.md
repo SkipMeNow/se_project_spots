@@ -20,4 +20,4 @@ The way you'll do this at work is by exporting images directly from Figma — we
   
 Good luck and have fun!
 
-[View the project on GitHub Pages] https://skipmenow.github.io/se_project_spots/
+[View the project] https://skipmenow.github.io/se_project_spots/
