@@ -17,7 +17,7 @@
 ## Technologies & Techniques
 
 - **HTML5** for semantic structure
-- **CSS3** for modular styling with media queries, Flexbox, Grid, and `-webkit-line-clamp`
+- **CSS3** for modular styling with media queries, Grid, and `-webkit`
 - **Responsive design** across desktop, intermediate, and mobile resolutions
 - **Accessibility best practices** including alt text and layout clarity
 - **Modular CSS files**: `profile.css`, `card.css`, `cards.css`, `header.css`, `footer.css`, `content.css`
