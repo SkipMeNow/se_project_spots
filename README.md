@@ -38,3 +38,4 @@ Card layout showing multiple image tiles with like buttons
 
 this wibsite is deployed to GitHub Pages.
 [View Spots on GitHub Pages](https://skipmenow.github.io/se_project_spots/)
+
