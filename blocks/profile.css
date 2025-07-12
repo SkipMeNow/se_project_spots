@@ -14,6 +14,9 @@
 .profile__colum {
   display: flex;
   flex-direction: column;
+  align-items: start;
+  max-width: 420px;
+  align-items: center;
 }
 
 .profile__name {
@@ -49,7 +52,6 @@
 .profile__edit-button {
   margin-top: auto;
   height: 16px;
-  border-radius: 90px;
   opacity: 70%;
   border: none;
   color: #212121;
@@ -57,13 +59,13 @@
   font-size: 16px;
   font-weight: 500;
   line-height: 1;
-  margin-right: auto;
+  cursor: pointer
 }
 
 .profile__add-button {
   margin-left: auto;
   margin-top: auto;
-  width: 149px;
+  width: 157px;
   height: 52px;
   border-radius: 8px;
   background-color: #212121;
@@ -71,13 +73,14 @@
   font-size: 16px;
   font-weight: 500;
   line-height: 1;
-  min-width: 149px;
 }
 
-.profile__add-button:hover,
 .profile__edit-button:hover {
-  cursor: pointer;
-  opacity: 100%;
+  opacity: 1;
+}
+
+.profile__add-button:hover {
+  opacity: 0.8;
 }
 
 
@@ -91,7 +94,7 @@
     padding-top: 20px;
   }
 
-  .profile__avator {
+  .profile__avatar {
     margin-right: 0;
     width: 80px;
     height: 80px;
