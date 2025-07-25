@@ -25,12 +25,12 @@
           <h1 class="profile__name">Aliaune Damala Bouga Time Bongo Puru Nacka Lu Lu Lu Badara Akon</h1>
           <p class="profile__description">Known mononymously as Akon (/ˈeɪkɒn/), is a Senegalese-American singer, record
             producer, and entrepreneur. An influential figure in modern world</p>
-          <button class="profile__edit-button">
+          <button class="profile__edit-button" id="edit-profile-button">
             <img src="./images/edit-icon.svg" alt="edit icon">
             Edit Profile
           </button>
         </div>
-        <button type="button" class="profile__add-button">
+        <button type="button" class="profile__add-button" id="new-post-button">
           <img src="./images/plus-icon.svg" alt="edit icon">
           New Post
         </button>
@@ -91,7 +91,7 @@
     <footer class="footer">
       <h2 class="footer__title">2024 © Spots</h2>
     </footer>
-    <div class="modal">
+    <div class="modal" id="edit-profile-modal">
       <div class="modal__containor">
         <button type="button" class="modal__close-btn">
           <img src="./images/X.svg" alt="close X icon">
@@ -111,7 +111,7 @@
       </div>
     </div>
 
-    <div class="modal modal_is-opened">
+    <div class="modal" id="new-post-modal">
       <div class="modal__containor">
         <button type="button" class="modal__close-btn">
           <img src="./images/X.svg" alt="close X icon">
@@ -131,6 +131,7 @@
       </div>
     </div>
   </div>
+  <script src="./Scripts/index.js"></script>
 </body>
 
 </html>
