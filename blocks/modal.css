@@ -14,7 +14,7 @@
   transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
-.modal_is-opened {
+.modal_opened {
   visibility: visible;
   opacity: 1;
 }
@@ -26,6 +26,7 @@
   background-color: #fff;
   padding: 32px 50px;
   position: relative;
+  box-sizing: border-box;
 }
 
 .modal__close-btn {
@@ -65,6 +66,7 @@
   border: 1px solid #21212166;
   cursor: pointer;
   padding-left: 12px;
+  box-sizing: border-box
 }
 
 .modal__input::placeholder {
@@ -98,6 +100,10 @@
 }
 
 @media screen and (max-width: 627px) {
+  .modal__container {
+    padding: 12;
+  }
+
   .modal__title {
     font-size: 20px;
     padding: 10px 0 0;
@@ -111,5 +117,11 @@
   .modal__submit-btn {
     max-width: none;
     width: 100%;
+  }
+
+  .modal__close-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
   }
 }
