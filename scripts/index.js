@@ -94,5 +94,5 @@ function handleAddCardSubmit(evt) {
 newPostForm.addEventListener("submit", handleAddCardSubmit);
 
 initialCards.forEach((element) => {
-  console.log(element.name);
+  console.log(`${element.name} \n ${element.link}`);
 });
