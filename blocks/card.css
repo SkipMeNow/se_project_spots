@@ -26,7 +26,8 @@
   height: 413px;
   object-fit: cover;
   margin-bottom: 12px;
-  border-radius: 8px
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 .card__like-button {
@@ -59,6 +60,7 @@
   right: 10px;
   background: url("../images/Delete=Default.svg");
   border: none;
+  cursor: pointer;
 }
 
 .card__delete-button:hover {
