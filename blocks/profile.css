@@ -73,6 +73,7 @@
   font-weight: 500;
   line-height: 1;
   cursor: pointer;
+  border: none;
 }
 
 .profile__edit-button:hover {

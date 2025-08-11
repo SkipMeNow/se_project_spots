@@ -43,7 +43,7 @@
               <img src="#" alt="" class="card__image">
               <div class="card__content">
                 <h2 class="card__title"></h2>
-                <button type="button" class="card__like-button"></button>
+                <button type="button" class="card__like-button" aria-label="Like this card"></button>
               </div>
             </li>
           </template>
@@ -58,7 +58,7 @@
         <button type="button" class="modal__close-btn">
         </button>
         <h2 class="modal__title">Edit Profile</h2>
-        <form class="modal__form">
+        <form class="modal__form" id="edit-profile-form">
           <label for="profile-name-input" class="modal__label">
             Name
             <input required id="profile-name-input" type="text" class="modal__input" placeholder="Type your name">
@@ -76,10 +76,9 @@
     <div class="modal" id="modal__new-post">
       <div class="modal__content">
         <button type="button" class="modal__close-btn">
-
         </button>
         <h2 class="modal__title">New post</h2>
-        <form class="modal__form">
+        <form class="modal__form" id="new-post-form">
           <label for="profile-image-input" class="modal__label">
             Image link
             <input required id="profile-image-input" type="text" class="modal__input"
