@@ -52,22 +52,22 @@
     <footer class="footer">
       <h2 class="footer__title">2024 © Spots</h2>
     </footer>
-    <div class="modal" id="modal__edit-profile">
+    <div class="modal" id="modal__edit-profile" role="dialog" aria-modal="true">
       <div class="modal__content">
-        <button type="button" class="modal__close-btn">
+        <button type="button" class="modal__close-btn" aria-label="Close">
         </button>
         <h2 class="modal__title">Edit Profile</h2>
         <form class="modal__form" id="edit-profile-form" novalidate>
           <label for="profile-name-input" class="modal__label">
             Name
             <input required id="profile-name-input" type="text" class="modal__input" placeholder="Type your name"
-              minlength="2" maxlength="40">
+              minlength="2" maxlength="40" aria-invalid="true">
             <span id="profile-name-input-error" class="modal__span-error"></span>
           </label>
           <label for="profile-description-input" class="modal__label">
             Description
             <input required id="profile-description-input" type="text" class="modal__input"
-              placeholder="Describe your self" minlength="2" maxlength="200">
+              placeholder="Describe your self" minlength="2" maxlength="200" aria-invalid="true">
             <span id="profile-description-input-error" class="modal__span-error"></span>
           </label>
           <button type="submit" class="modal__submit-btn">Save</button>
@@ -75,22 +75,22 @@
       </div>
     </div>
 
-    <div class="modal" id="modal__new-post">
+    <div class="modal" id="modal__new-post" role="dialog" aria-modal="true">
       <div class="modal__content">
-        <button type="button" class="modal__close-btn">
+        <button type="button" class="modal__close-btn" aria-label="Close">
         </button>
         <h2 class="modal__title">New post</h2>
         <form class="modal__form" id="new-post-form" novalidate>
           <label for="profile-image-input" class="modal__label">
             Image link
             <input required id="profile-image-input" type="url" class="modal__input"
-              placeholder="Paste a link to the picture">
+              placeholder="Paste a link to the picture" aria-invalid="true">
             <span id="profile-image-input-error" class="modal__span-error"></span>
           </label>
           <label for="profile-caption-input" class="modal__label">
             Caption
             <input required id="profile-caption-input" type="text" class="modal__input" placeholder="Type your caption"
-              minlength="2" maxlength="200">
+              minlength="2" maxlength="30" aria-invalid="true">
             <span id="profile-caption-input-error" class="modal__span-error"></span>
           </label>
           <button type="submit" class="modal__submit-btn">Save</button>
