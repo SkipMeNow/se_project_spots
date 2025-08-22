@@ -22,9 +22,8 @@
       <section class="page__section profile">
         <img src="./images/avatar.jpg" alt="user avatar" class="profile__avatar">
         <div class="profile__column">
-          <h1 class="profile__name">Aliaune Damala Bouga Time Bongo Puru Nacka Lu Lu Lu Badara Akon</h1>
-          <p class="profile__description">Known mononymously as Akon (/ˈeɪkɒn/), is a Senegalese-American singer, record
-            producer, and entrepreneur. An influential figure in modern world</p>
+          <h1 class="profile__name">Bessie Coleman</h1>
+          <p class="profile__description">Civil Aviator</p>
           <button class="profile__edit-button" id="edit-profile-button">
             <img src="./images/edit-icon.svg" alt="edit icon">
             Edit Profile
@@ -58,15 +57,18 @@
         <button type="button" class="modal__close-btn">
         </button>
         <h2 class="modal__title">Edit Profile</h2>
-        <form class="modal__form" id="edit-profile-form">
+        <form class="modal__form" id="edit-profile-form" novalidate>
           <label for="profile-name-input" class="modal__label">
             Name
-            <input required id="profile-name-input" type="text" class="modal__input" placeholder="Type your name">
+            <input required id="profile-name-input" type="text" class="modal__input" placeholder="Type your name"
+              minlength="2" maxlength="40">
+            <span id="profile-name-input-error" class="modal__span-error"></span>
           </label>
           <label for="profile-description-input" class="modal__label">
             Description
             <input required id="profile-description-input" type="text" class="modal__input"
-              placeholder="Describe your self">
+              placeholder="Describe your self" minlength="2" maxlength="200">
+            <span id="profile-description-input-error" class="modal__span-error"></span>
           </label>
           <button type="submit" class="modal__submit-btn">Save</button>
         </form>
@@ -78,15 +80,18 @@
         <button type="button" class="modal__close-btn">
         </button>
         <h2 class="modal__title">New post</h2>
-        <form class="modal__form" id="new-post-form">
+        <form class="modal__form" id="new-post-form" novalidate>
           <label for="profile-image-input" class="modal__label">
             Image link
-            <input required id="profile-image-input" type="text" class="modal__input"
+            <input required id="profile-image-input" type="url" class="modal__input"
               placeholder="Paste a link to the picture">
+            <span id="profile-image-input-error" class="modal__span-error"></span>
           </label>
           <label for="profile-caption-input" class="modal__label">
             Caption
-            <input required id="profile-caption-input" type="text" class="modal__input" placeholder="Type your caption">
+            <input required id="profile-caption-input" type="text" class="modal__input" placeholder="Type your caption"
+              minlength="2" maxlength="200">
+            <span id="profile-caption-input-error" class="modal__span-error"></span>
           </label>
           <button type="submit" class="modal__submit-btn">Save</button>
         </form>
@@ -102,6 +107,7 @@
     </div>
   </div>
   <script src="./scripts/index.js"></script>
+  <script src="./scripts/validation.js"></script>
 </body>
 
 </html>

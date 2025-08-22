@@ -50,6 +50,7 @@ const newPostCloseButton = newPostModal.querySelector(".modal__close-btn");
 const newPostForm = document.forms["new-post-form"];
 const newPostLinkInput = newPostForm.querySelector("#profile-image-input");
 const newPostCaptionInput = newPostForm.querySelector("#profile-caption-input");
+const buttonElement = newPostModal.querySelector(".modal__submit-btn");
 
 const cardList = document.querySelector(".cards__list");
 const cardTemplate = document.querySelector("#card-template");
@@ -71,16 +72,20 @@ function closeModal(modal) {
 
 // Profile Edit
 profileEditButton.addEventListener("click", function () {
-  openModal(editProfileModal);
   editProfileNameInput.value = profileName.textContent;
   editProfileDescriptionInput.value = profileDescription.textContent;
+  resetValidation(
+    editProfileForm,
+    [editProfileNameInput, editProfileDescriptionInput],
+    settings
+  );
+  openModal(editProfileModal);
 });
 
 const closeButtons = document.querySelectorAll(".modal__close-btn");
 
 closeButtons.forEach((button) => {
   const modal = button.closest(".modal");
-
   button.addEventListener("click", () => closeModal(modal));
 });
 
@@ -98,7 +103,6 @@ newPostButton.addEventListener("click", function () {
   openModal(newPostModal);
 });
 
-
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
   const data = {
@@ -111,6 +115,8 @@ function handleAddCardSubmit(evt) {
   cardList.prepend(newCard);
   closeModal(newPostModal);
   newPostForm.reset();
+
+  disabledButton(buttonElement, settings);
 }
 
 newPostForm.addEventListener("submit", handleAddCardSubmit);
@@ -156,3 +162,19 @@ function getCardElement(data) {
 
   return cardElement;
 }
+
+document.addEventListener("keydown", (evt) => {
+  if (evt.key === "Escape") {
+    const openedModal = document.querySelector(".modal.modal_opened");
+    if (openedModal) {
+      closeModal(openedModal);
+    }
+  }
+});
+
+document.addEventListener("mousedown", (evt) => {
+  const openedModal = document.querySelector(".modal.modal_opened");
+  if (openedModal && evt.target === openedModal) {
+    closeModal(openedModal);
+  }
+});

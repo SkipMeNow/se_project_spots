@@ -81,6 +81,17 @@
   border-color: #212121;
 }
 
+.modal__span-error {
+  display: block;
+  color: red;
+  font-size: 16px;
+  margin: 8px 0 0;
+}
+
+.modal__input_type_error {
+  border: 1px solid red;
+}
+
 .modal__label {
   margin: 0 0 32px;
   font-size: 16px;
@@ -139,6 +150,11 @@
 
 .modal__close-btn_type_preview:hover {
   opacity: 0.4;
+}
+
+.button_inactive {
+  background-color: #212121;
+  opacity: 0.5;
 }
 
 
