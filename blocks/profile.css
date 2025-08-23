@@ -8,7 +8,7 @@
   width: 190px;
   height: 190px;
   margin-right: 20px;
-  border-radius: 8px
+  border-radius: 8px;
 }
 
 .profile__column {
@@ -58,7 +58,7 @@
   font-size: 16px;
   font-weight: 500;
   line-height: 1;
-  cursor: pointer
+  cursor: pointer;
 }
 
 .profile__add-button {

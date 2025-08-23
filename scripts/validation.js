@@ -16,6 +16,17 @@ const resetValidation = (formElement, inputList, config) => {
   inputList.forEach((input) => {
     hideInputError(formElement, input, config);
   });
+
+  const buttonElement = formElement.querySelector(config.submitButtonSelector);
+  if (!buttonElement) {
+    console.warn(
+      "Submit button not found for selector:",
+      config.submitButtonSelector
+    );
+    return;
+  }
+
+  toggleButtonState(inputList, buttonElement, config);
 };
 
 const toggleButtonState = (inputList, buttonElement, config) => {

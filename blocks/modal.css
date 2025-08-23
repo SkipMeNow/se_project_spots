@@ -70,7 +70,7 @@
   border: 1px solid #21212166;
   cursor: pointer;
   padding-left: 12px;
-  box-sizing: border-box
+  box-sizing: border-box;
 }
 
 .modal__input::placeholder {

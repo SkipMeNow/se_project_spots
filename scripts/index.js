@@ -64,10 +64,14 @@ const previewCaptionElement = document.querySelector(".modal__caption");
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
+  document.addEventListener("keydown", handleEscClose);
+  document.addEventListener("mousedown", handleOverlayClick);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
+  document.removeEventListener("keydown", handleEscClose);
+  document.removeEventListener("mousedown", handleOverlayClick);
 }
 
 // Profile Edit
@@ -163,18 +167,15 @@ function getCardElement(data) {
   return cardElement;
 }
 
-document.addEventListener("keydown", (evt) => {
+function handleEscClose(evt) {
   if (evt.key === "Escape") {
     const openedModal = document.querySelector(".modal.modal_opened");
-    if (openedModal) {
-      closeModal(openedModal);
-    }
+    if (openedModal) closeModal(openedModal);
   }
-});
+}
 
-document.addEventListener("mousedown", (evt) => {
-  const openedModal = document.querySelector(".modal.modal_opened");
-  if (openedModal && evt.target === openedModal) {
-    closeModal(openedModal);
+function handleOverlayClick(evt) {
+  if (evt.target.classList.contains("modal")) {
+    closeModal(evt.target);
   }
-});
+}
