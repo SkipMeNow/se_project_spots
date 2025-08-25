@@ -2,7 +2,7 @@ const settings = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__submit-btn",
-  inactiveButtonClass: "button_inactive",
+  inactiveButtonClass: "modal__submit-btn_disabled",
   inputErrorClass: "modal__input_type_error",
   errorClass: "modal__span-error",
 };
@@ -10,23 +10,6 @@ const settings = {
 const disabledButton = (buttonElement, config) => {
   buttonElement.classList.add(config.inactiveButtonClass);
   buttonElement.disabled = true;
-};
-
-const resetValidation = (formElement, inputList, config) => {
-  inputList.forEach((input) => {
-    hideInputError(formElement, input, config);
-  });
-
-  const buttonElement = formElement.querySelector(config.submitButtonSelector);
-  if (!buttonElement) {
-    console.warn(
-      "Submit button not found for selector:",
-      config.submitButtonSelector
-    );
-    return;
-  }
-
-  toggleButtonState(inputList, buttonElement, config);
 };
 
 const toggleButtonState = (inputList, buttonElement, config) => {
@@ -69,6 +52,24 @@ const checkInputValidity = (formElement, inputElement, config) => {
   }
 };
 
+const resetValidation = (formElement, config) => {
+  const inputList = Array.from(
+    formElement.querySelectorAll(config.inputSelector)
+  );
+  inputList.forEach((input) => hideInputError(formElement, input, config));
+
+  const buttonElement = formElement.querySelector(config.submitButtonSelector);
+  if (!buttonElement) {
+    console.warn(
+      "Submit button not found for selector:",
+      config.submitButtonSelector
+    );
+    return;
+  }
+
+  toggleButtonState(inputList, buttonElement, config);
+};
+
 const setEventListeners = (formElement, config) => {
   const inputList = Array.from(
     formElement.querySelectorAll(config.inputSelector)
@@ -78,10 +79,14 @@ const setEventListeners = (formElement, config) => {
   toggleButtonState(inputList, buttonElement, config);
 
   inputList.forEach((inputElement) => {
-    inputElement.addEventListener("input", function () {
+    inputElement.addEventListener("input", () => {
       checkInputValidity(formElement, inputElement, config);
       toggleButtonState(inputList, buttonElement, config);
     });
+  });
+
+  formElement.addEventListener("reset", () => {
+    disabledButton(buttonElement, config);
   });
 };
 
