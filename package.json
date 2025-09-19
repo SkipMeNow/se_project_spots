@@ -2,7 +2,7 @@
   "name": "spots",
   "version": "0.1.0",
   "description": "**Spots** is a responsive website that features a user profile section and a gallery of curated photo cards. It's built to display cleanly on all common screen sizes—from desktop to mobile—while maintaining stylistic consistency, interactivity, and accessibility.",
-  "homepage": "https://github.com/SkipMeNow/se_project_spots",
+  "homepage": "https://SkipMeNow.github.io/se_project_spots",
   "bugs": {
     "url": "https://github.com/SkipMeNow/se_project_spots/issues"
   },

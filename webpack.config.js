@@ -10,7 +10,10 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "main.js",
-    publicPath: "/", // safer default for dev/prod
+    // Use root (/) during dev server, but use relative paths for production
+    // so assets are loaded correctly when the site is served from
+    // GitHub Pages project pages (e.g. https://user.github.io/repo/).
+    publicPath: process.env.NODE_ENV === 'production' ? './' : '/',
   },
 
   mode: "development",
