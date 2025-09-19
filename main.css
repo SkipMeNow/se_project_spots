@@ -354,14 +354,14 @@ template {
   font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
-  src: url(/assets/35d26b781dc5fda684cc.ttf) format("truetype");
+  src: url(./assets/35d26b781dc5fda684cc.ttf) format("truetype");
 }
 
 @font-face {
   font-family: "Poppins";
   font-style: normal;
   font-weight: 500;
-  src: url(/assets/673ed42382ab264e0bf5.ttf) format("truetype");
+  src: url(./assets/673ed42382ab264e0bf5.ttf) format("truetype");
 }
 .page {
   background-color: #FCF5E5;
@@ -553,13 +553,13 @@ template {
   width: 23px;
   height: 20px;
   border: none;
-  background: transparent url(/assets/69134273483c4e5472ba.svg) center no-repeat;
+  background: transparent url(./assets/69134273483c4e5472ba.svg) center no-repeat;
   opacity: 0.4;
   cursor: pointer;
 }
 
 .card__like-button_active {
-  background: transparent url(/assets/5ba14d29c8f0f8b51069.svg) center no-repeat;
+  background: transparent url(./assets/5ba14d29c8f0f8b51069.svg) center no-repeat;
   opacity: 1;
 }
 
@@ -577,13 +577,13 @@ template {
   height: 32px;
   top: 10px;
   right: 10px;
-  background: url(/assets/d19faa0112f44e2b6e01.svg);
+  background: url(./assets/d19faa0112f44e2b6e01.svg);
   border: none;
   cursor: pointer;
 }
 
 .card__delete-button:hover {
-  background: url(/assets/86ae92bd1a937388d496.svg);
+  background: url(./assets/86ae92bd1a937388d496.svg);
 }
 
 
@@ -670,7 +670,7 @@ template {
   right: 50px;
   width: 40px;
   height: 40px;
-  background: transparent url(/assets/b6803fef330c8e48dafa.svg) center no-repeat;
+  background: transparent url(./assets/b6803fef330c8e48dafa.svg) center no-repeat;
   opacity: 40%;
   border: none;
   cursor: pointer;
@@ -775,7 +775,7 @@ template {
 .modal__close-btn_type_preview {
   top: 0;
   right: -52.5px;
-  background: transparent url(/assets/53f0bab7ec2e970778f9.svg) center no-repeat;
+  background: transparent url(./assets/53f0bab7ec2e970778f9.svg) center no-repeat;
   opacity: 1;
 }
 
