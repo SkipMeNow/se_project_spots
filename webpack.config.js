@@ -10,10 +10,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "main.js",
-    // Use root (/) during dev server, but use relative paths for production
-    // so assets are loaded correctly when the site is served from
-    // GitHub Pages project pages (e.g. https://user.github.io/repo/).
-    publicPath: process.env.NODE_ENV === 'production' ? './' : '/',
+    publicPath: "./",
   },
 
   mode: "development",
@@ -36,11 +33,11 @@ module.exports = {
       {
         test: /\.js$/,
         loader: "babel-loader",
-        exclude: /node_modules/, // fixed: now RegExp
+        exclude: /node_modules/, 
       },
       {
         test: /\.html$/,
-        use: ["html-loader"], // handles <img src=""> in HTML
+        use: ["html-loader"],
       },
       {
         test: /\.(png|svg|jpg|jpeg|webp|gif|woff2?|eot|ttf|otf)$/i,
