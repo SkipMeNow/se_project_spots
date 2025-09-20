@@ -4,6 +4,7 @@ import {
   settings,
   resetValidation,
 } from "../scripts/validation.js";
+import Api from "../utils/api.js";
 
 const initialCards = [
   {
@@ -35,6 +36,14 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
   },
 ];
+
+const api = new Api({
+  baseUrl: "https://around-api.en.tripleten-services.com/v1",
+  headers: {
+    authorization: "0af0ccaa-e2a8-4eec-9ca7-6e6751b01c1c",
+    "Content-Type": "application/json",
+  },
+});
 
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
@@ -68,6 +77,15 @@ const previewModalCloseButton = document.querySelector(
 );
 const previewImageElement = document.querySelector(".modal__image");
 const previewCaptionElement = document.querySelector(".modal__caption");
+
+api
+  .getInitialCards()
+  .then((cards) => {
+    cards.forEach((cardData) => renderCard(cardData, "append"));
+  })
+  .catch((err) => {
+    console.error("Error loading initial cards:", err);
+  });
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
@@ -125,8 +143,6 @@ function handleAddCardSubmit(evt) {
 }
 
 newPostForm.addEventListener("submit", handleAddCardSubmit);
-
-initialCards.forEach((cardData) => renderCard(cardData, "append"));
 
 function renderCard(item, method = "prepend") {
   const cardElement = getCardElement(item);
