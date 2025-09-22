@@ -1,0 +1,86 @@
+.delete-popup {
+  /* Styles for the delete confirmation popup */
+}
+
+.delete-popup__button-group {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 32px;
+}
+
+.delete-popup__title {
+  font-size: 24px;
+  font-weight: 500;
+  text-align: center;
+  margin: 0;
+}
+
+.delete-popup__close-btn {
+  top: 0;
+  right: -52.5px;
+  background: transparent url("/src/images/close-icon-white.svg") center no-repeat;
+  opacity: 1;
+}
+
+.delete-popup__close-btn:hover {
+  opacity: 0.4;
+}
+
+.delete-popup__submit-btn_type_delete {
+  background-color: #FF6565;
+  /* margin-right: 16px; */
+  border: none;
+  width: 156px;
+  height: 52px;
+  color: #212121;
+  font-size: 16px;
+  font-family: Poppins;
+}
+
+.delete-popup__submit-btn_type_delete:hover {
+  background-color: #FF3333;
+}
+
+.delete-popup__submit-btn_type_cancel {
+  background-color: transparent;
+  border: 1px solid #212121;
+  border-radius: 8px;
+  width: 156px;
+  height: 52px;
+  color: #212121;
+  font-size: 16px;
+  font-family: Poppins;
+}
+
+.delete-popup__submit-btn_type_cancel:hover {
+  background-color: #212121;
+  color: #FFFFFF;
+}
+
+@media screen and (max-width: 627px) {
+  .delete-popup__button-group {
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 24px;
+    align-items: center;
+  }
+
+  .delete-popup__submit-btn_type_delete,
+  .delete-popup__submit-btn_type_cancel {
+    width: 100%;
+    max-width: 280px;
+    height: 52px;
+  }
+
+  .delete-popup__title {
+    font-size: 20px;
+    line-height: 1.2;
+    padding: 0 20px;
+  }
+
+  .delete-popup__close-btn {
+    right: 0;
+    top: -50px;
+  }
+}

@@ -3,28 +3,34 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-module.exports = {
-  entry: {
-    main: "./src/pages/index.js",
-  },
-  output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "main.js",
-    publicPath: "/", // safer default for dev/prod
-  },
+module.exports = (env, argv) => {
+  const isProd = argv && argv.mode === 'production' || process.env.NODE_ENV === 'production';
 
-  mode: "development",
-  devtool: "inline-source-map",
-  stats: "errors-only",
+  return {
+    entry: {
+      main: "./src/pages/index.js",
+    },
+    output: {
+      path: path.resolve(__dirname, "dist"),
+      filename: "main.js",
+      // Use '/' for dev server so webpack-dev-server serves from root URL
+      // and './' for production so generated files work when hosted under
+      // a repository subpath (GitHub Pages project pages).
+      publicPath: isProd ? './' : '/',
+    },
 
-  devServer: {
-    static: path.resolve(__dirname, "./dist"),
-    compress: true,
-    port: 8080,
-    open: true,
-    liveReload: true,
-    hot: false,
-  },
+    mode: isProd ? 'production' : 'development',
+    devtool: isProd ? false : "inline-source-map",
+    stats: "errors-only",
+
+    devServer: {
+      static: path.resolve(__dirname, "./dist"),
+      compress: true,
+      port: 8080,
+      open: true,
+      liveReload: true,
+      hot: true,
+    },
 
   target: ["web", "es5"],
 
@@ -33,11 +39,11 @@ module.exports = {
       {
         test: /\.js$/,
         loader: "babel-loader",
-        exclude: /node_modules/, // fixed: now RegExp
+        exclude: /node_modules/,
       },
       {
         test: /\.html$/,
-        use: ["html-loader"], // handles <img src=""> in HTML
+        use: ["html-loader"],
       },
       {
         test: /\.(png|svg|jpg|jpeg|webp|gif|woff2?|eot|ttf|otf)$/i,
@@ -68,4 +74,5 @@ module.exports = {
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin(),
   ],
+  };
 };

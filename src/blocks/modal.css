@@ -156,7 +156,6 @@
   background-color: rgba(33, 33, 33, 0.5)
 }
 
-
 @media screen and (max-width: 480px) {
   .modal__content {
     padding: 12px;

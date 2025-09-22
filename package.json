@@ -2,7 +2,7 @@
   "name": "spots",
   "version": "0.1.0",
   "description": "**Spots** is a responsive website that features a user profile section and a gallery of curated photo cards. It's built to display cleanly on all common screen sizes—from desktop to mobile—while maintaining stylistic consistency, interactivity, and accessibility.",
-  "homepage": "https://github.com/SkipMeNow/se_project_spots#readme",
+  "homepage": "https://SkipMeNow.github.io/se_project_spots",
   "bugs": {
     "url": "https://github.com/SkipMeNow/se_project_spots/issues"
   },
@@ -13,7 +13,9 @@
   },
   "scripts": {
     "build": "webpack --mode production",
-    "dev": "webpack serve --mode development"
+    "dev": "webpack serve --mode development",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "author": "TripleTen",
   "license": "ISC",
@@ -25,6 +27,7 @@
     "clean-webpack-plugin": "4.0.0",
     "css-loader": "6.7.1",
     "cssnano": "5.1.12",
+    "gh-pages": "^6.3.0",
     "html-loader": "^5.1.0",
     "html-webpack-plugin": "5.5.0",
     "mini-css-extract-plugin": "2.6.1",
